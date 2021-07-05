@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion deps.compile_sdk
+    defaultConfig {
+        minSdkVersion deps.min_sdk
+        targetSdkVersion deps.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api deps.kotlin_stdlib
+    api deps.androidx_core
+    api deps.appcompat
+    api files('libs/commons-codec-1.8.jar')
+    testImplementation deps.junit
+    androidTestImplementation deps.runner
+    androidTestImplementation deps.espresso_core
+
+    api deps.MyToast
+    api deps.constraint
+    api deps.PrefUtil
+    api deps.gson
+    api deps.retrofit2_retrofit
+    api deps.retrofit2_converter_gson
+    api deps.adapter_rxjava2
+
+    /*加载图片的插件*/
+    api deps.glide
+    kapt deps.glide_compiler
+    api deps.glide_transformations
+    api deps.recyclerview
+    api deps.bga_swipebacklayout
+
+    //jetpack
+    api deps.lifecycle_extensions
+    api deps.lifecycle_livedata_ktx
+    api deps.lifecycle_livedata
+    api deps.lifecycle_viewmodel_ktx
+}

@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/black</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+    </style>
+
+    <style name="activityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_from_right_to_left_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_from_right_to_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_from_left_to_right_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_from_left_to_right_out</item>
+    </style>
+
+    <!--    values-v21。5.0 以上提供了 setStatusBarColor()  方法设置状态栏颜色。-->
+    <style name="AppTheme" parent="Base.AppTheme">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+        <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

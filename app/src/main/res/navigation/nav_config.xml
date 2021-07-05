@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_config.xml"
+            app:startDestination="@id/login_fragment">
+
+    <fragment android:name="com.qzl.mvvm.fragment.LoginFragment"
+              android:id="@+id/login_fragment">
+        <!--        跳转ID，根据这个ID跳转-->
+        <action
+                android:id="@+id/to_regist_fragment"
+                app:destination="@id/regis_fragment"
+                app:enterAnim="@anim/slide_from_right_to_left_in"
+                app:exitAnim="@anim/slide_from_right_to_left_out"
+                app:popEnterAnim="@anim/slide_from_left_to_right_in"
+                app:popExitAnim="@anim/slide_from_left_to_right_out"/>
+
+        <action
+                android:id="@+id/to_forget_fragment"
+                app:destination="@id/forget_fragment"
+                app:enterAnim="@anim/slide_from_right_to_left_in"
+                app:exitAnim="@anim/slide_from_right_to_left_out"
+                app:popEnterAnim="@anim/slide_from_left_to_right_in"
+                app:popExitAnim="@anim/slide_from_left_to_right_out"/>
+
+        <action
+                android:id="@+id/to_agreement_activity"
+                app:destination="@id/agreement_activity"/>
+    </fragment>
+
+    <fragment android:name="com.qzl.mvvm.fragment.ForgetFragment"
+              android:id="@+id/forget_fragment">
+
+        <action android:id="@+id/forget_to_regist_fragment"
+                app:destination="@id/regis_fragment"/>
+
+    </fragment>
+
+    <fragment android:name="com.qzl.mvvm.fragment.RegisterFragment"
+              android:id="@+id/regis_fragment">
+        <!--        跳转到已经存在的页时，popUpToInclusive 为true，表示不再创建，用原先的，把前面的都移出栈-->
+        <action android:id="@+id/to_login_page"
+                app:destination="@id/login_fragment"
+                app:popUpTo="@id/login_fragment"
+                app:popUpToInclusive="true"/>
+
+    </fragment>
+
+    <!--    用户协议activity-->
+    <activity
+            android:id="@+id/agreement_activity"
+            android:name="com.qzl.mvvm.AgreementActivity">
+
+    </activity>
+</navigation>
