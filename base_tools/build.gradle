@@ -68,7 +68,6 @@ dependencies {
     /*加载图片的插件*/
     api deps.glide
     kapt deps.glide_compiler
-    api deps.glide_transformations
     api deps.recyclerview
     api deps.bga_swipebacklayout
 

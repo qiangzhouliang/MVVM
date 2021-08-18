@@ -54,7 +54,6 @@ deps.adapter_rxjava2 = "com.squareup.retrofit2:adapter-rxjava2:$retrofit2_versio
 def glide_version = '4.11.0'
 deps.glide = "com.github.bumptech.glide:glide:$glide_version"
 deps.glide_compiler = "com.github.bumptech.glide:compiler:$glide_version"
-deps.glide_transformations = 'jp.wasabeef:glide-transformations:4.0.1'
 deps.gpuimage = 'jp.co.cyberagent.android:gpuimage:2.0.3'
 deps.universal_image_loader = "com.nostra13.universalimageloader:universal-image-loader:1.9.5"
 
@@ -108,16 +107,12 @@ deps.booster_transform_all = "com.didiglobal.booster:booster-transform-all:$boos
 deps.bottom_bar = 'com.roughike:bottom-bar:2.3.1'
 
 //滑动返回插件
-deps.bga_swipebacklayout = 'cn.bingoogolapple:bga-swipebacklayout:2.0.1'
+deps.bga_swipebacklayout = 'com.github.bingoogolapple:BGASwipeBackLayout-Android:2.0.2'
 
 // 校验
 deps.android_saripaar = 'com.mobsandgeeks:android-saripaar:1.0.3'
 //使用文件上传
 deps.xutils = 'org.xutils:xutils:3.8.3'
-
-//集成友盟统计
-deps.umsdk_analytics = 'com.umeng.umsdk:analytics:8.0.0'
-deps.umsdk_common = 'com.umeng.umsdk:common:2.0.0'
 
 //toast封装
 deps.MyToast = 'com.github.qiangzhouliang:MyToast:1.0.2'

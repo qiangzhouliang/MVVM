@@ -15,6 +15,7 @@ import com.qzl.base_common.R
 import com.qzl.base_common.ui.HeadControlPanel
 import com.qzl.base_tools.operate.CompleteQuit
 import kotlinx.android.synthetic.main.common_view.*
+import kotlinx.android.synthetic.main.head_control_panel.view.*
 
 /**
  * @desc 公共基础activity
@@ -51,7 +52,7 @@ abstract class BaseActivity : AppCompatActivity() {
         headPanel.initHeadPanel()
         headPanel.setMiddleTitle(title)
 
-        val headLayout = headPanel.headLayoutBack
+        val headLayout = headPanel.head_layout_back
         if (isSetLeftImgBack) {
             headPanel.getmLeftImage()?.setImageResource(R.drawable.back)
             headLayout?.setOnClickListener(onClickListener)

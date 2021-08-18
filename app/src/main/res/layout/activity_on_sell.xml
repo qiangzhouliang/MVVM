@@ -5,18 +5,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".taobao.OnSellActivity">
-    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
-            android:id="@+id/contentRefresh"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#dfdfdf"
-            android:visibility="gone">
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/contetListRv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:overScrollMode="never"/>
-    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contetListRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"/>
     <include
             android:id="@+id/loadingView"
             layout="@layout/activity_on_loading"

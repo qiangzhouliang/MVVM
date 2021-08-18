@@ -6,8 +6,6 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter
-import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
 import com.qzl.mvvm.R
 import com.qzl.mvvm.adapter.OnSellListAdapter
 import com.qzl.base_common.base.LoadBaseActivity
@@ -50,8 +48,8 @@ class OnSellActivity : LoadBaseActivity<OnSellViewModel>() {
                         errorView.visibility = View.VISIBLE
                     }
                     else -> {
-                        contentRefresh.visibility = View.VISIBLE
-                        contentRefresh.finishLoadmore()
+//                        contentRefresh.visibility = View.VISIBLE
+//                        contentRefresh.finishLoadmore()
                     }
                 }
 
@@ -71,17 +69,17 @@ class OnSellActivity : LoadBaseActivity<OnSellViewModel>() {
      * 初始化view
      */
     override fun initView() {
-        contentRefresh.run {
-            setEnableLoadmore(true)
-            setEnableRefresh(false)
-            setEnableOverScroll(true)
-            setOnRefreshListener(object : RefreshListenerAdapter() {
-                override fun onLoadMore(refreshLayout: TwinklingRefreshLayout?) {
-                    //去执行加载更多
-                    mViewModel.loadMore()
-                }
-            })
-        }
+//        contentRefresh.run {
+//            setEnableLoadmore(true)
+//            setEnableRefresh(false)
+//            setEnableOverScroll(true)
+//            setOnRefreshListener(object : RefreshListenerAdapter() {
+//                override fun onLoadMore(refreshLayout: TwinklingRefreshLayout?) {
+//                    //去执行加载更多
+//                    mViewModel.loadMore()
+//                }
+//            })
+//        }
         errorView.setOnClickListener {
             //重新加载
             mViewModel.loadContent()
@@ -104,7 +102,7 @@ class OnSellActivity : LoadBaseActivity<OnSellViewModel>() {
     }
 
     private fun hideAll() {
-        contentRefresh.visibility = View.GONE
+//        contentRefresh.visibility = View.GONE
         loadingView.visibility = View.GONE
         errorView.visibility = View.GONE
         emptyView.visibility = View.GONE

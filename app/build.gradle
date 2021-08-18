@@ -72,8 +72,9 @@ dependencies {
     implementation deps.kotlin_stdlib
     implementation project(':base_common')
 
-    implementation 'com.lcodecorex:tkrefreshlayout:1.0.7'
-
+    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.0'
+    implementation  'com.scwang.smart:refresh-header-classics:2.0.0'    //经典刷新头
+    implementation  'com.scwang.smart:refresh-footer-classics:2.0.0'    //经典加载
     //使用navigation需要引入的包开始
     def nav_version = "2.3.1"
     // Java language implementation
